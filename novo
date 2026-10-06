@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Minha Loja</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">MINHA LOJA</div>
+
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#produtos">Produtos</a>
+            <a href="#contato">Contato</a>
+        </nav>
+
+        <button class="cart-button" onclick="abrirCarrinho()">
+            🛒 Carrinho
+            <span id="contador">0</span>
+        </button>
+    </header>
+
+    <main>
+
+        <section class="hero" id="inicio">
+            <div>
+                <h1>Encontre seus produtos favoritos</h1>
+                <p>Qualidade, preço justo e entrega rápida.</p>
+
+                <a href="#produtos" class="hero-button">
+                    Comprar agora
+                </a>
+            </div>
+        </section>
+
+        <section class="produtos-section" id="produtos">
+
+            <h2>Nossos produtos</h2>
+
+            <div class="filtros">
+
+                <input
+                    type="text"
+                    id="pesquisa"
+                    placeholder="Pesquisar produto..."
+                    oninput="mostrarProdutos()"
+                >
+
+                <select id="categoria" onchange="mostrarProdutos()">
+                    <option value="todos">Todas as categorias</option>
+                    <option value="roupas">Roupas</option>
+                    <option value="eletronicos">Eletrônicos</option>
+                    <option value="acessorios">Acessórios</option>
+                </select>
+
+            </div>
+
+            <div id="listaProdutos" class="produtos"></div>
+
+        </section>
+
+    </main>
+
+    <aside id="carrinho" class="carrinho">
+
+        <div class="carrinho-header">
+            <h2>Seu carrinho</h2>
+
+            <button onclick="fecharCarrinho()">✕</button>
+        </div>
+
+        <div id="itensCarrinho"></div>
+
+        <div class="carrinho-footer">
+
+            <h3>
+                Total:
+                <span id="total">R$ 0,00</span>
+            </h3>
+
+            <button class="finalizar" onclick="finalizarCompra()">
+                Finalizar compra
+            </button>
+
+            <button class="limpar" onclick="limparCarrinho()">
+                Limpar carrinho
+            </button>
+
+        </div>
+
+    </aside>
+
+    <footer id="contato">
+
+        <h2>Minha Loja</h2>
+
+        <p>
+            Entre em contato conosco para tirar suas dúvidas.
+        </p>
+
+        <p>
+            contato@minhaloja.com
+        </p>
+
+        <p>
+            © 2026 Minha Loja - Todos os direitos reservados.
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
